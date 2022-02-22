@@ -2,7 +2,7 @@ const express = require('express')
 const { exec } = require("child_process");
 const app = express()
 const port = 3000
-const SECRET = "?!zr8j~C!TsZQBfT";
+const SECRET = process.env.APP_SECRET;
 
 app.get('/deploy', (req, res) => {
     const { path } = req.query;
