@@ -4,7 +4,7 @@ const app = express()
 const port = 3000
 const SECRET = process.env.APP_SECRET;
 
-app.get('/deploy', (req, res) => {
+app.post('/deploy', (req, res) => {
     const { path } = req.query;
     const headerToken = req.headers['X-Gitlab-Token'];
     if(!path) {
