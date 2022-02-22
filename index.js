@@ -6,7 +6,7 @@ const SECRET = process.env.APP_SECRET;
 
 app.post('/deploy', (req, res) => {
     const { path } = req.query;
-    const headerToken = req.headers['X-Gitlab-Token'];
+    const headerToken = req.headers['x-gitlab-token'];
     if(!path) {
         res.status(422).send({
             message: 'Path not found'
